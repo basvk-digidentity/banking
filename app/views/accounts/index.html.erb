@@ -1,0 +1,9 @@
+<h1>Accounts</h1>
+
+<p>Please choose an account:</p>
+
+<ol>
+<% @accounts.each do |url, account, balance| %>
+    <li><%= link_to("#{account} | #{balance}", url, style: "text-decoration: none") %></li>
+<% end %>
+</ol>

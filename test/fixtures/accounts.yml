@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sys_acct:
+  account_number: "00000000"
+  balance: 999988766
+
+one:
+  account_number: 1
+  balance: 10000
+
+two:
+  account_number: 2
+  balance: 1234

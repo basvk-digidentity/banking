@@ -1,0 +1,30 @@
+<h1>New Transfer</h1>
+
+<% if flash[:error] %>
+<p style="color: red; font-weight: bold"><%= flash[:error] %></p>
+<% end %>
+
+<p>Current balance: €<%= '%.2f' % @balance %></p>
+
+<%= form_for @transfer, url: account_transfer_path(@transfer.sender_account) do |form| %>
+    <%= form.hidden_field :sender_account_id %>
+    <label>Account to transfer to:</label>
+    <%= form.text_field :receiver_account, value: @transfer.receiver_account&.account_number %>
+    <% if @transfer.errors.include?(:receiver_account) %>
+        <div class="field-error">
+            <%= @transfer.errors.messages_for(:receiver_account) %>
+        </div>
+    <% end %>
+    <br/>
+    <label>Amount</label>
+    <%= form.text_field :amount %>
+    <% if @transfer.errors.include?(:amount) %>
+        <div class="field-error">
+            <%= @transfer.errors.messages_for(:amount) %>
+        </div>
+    <% end %>
+    <br/>
+    <label>Remark</label>
+    <%= form.text_field :remark %><br/>
+    <%= submit_tag 'Submit' %>
+<% end %>

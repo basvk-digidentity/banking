@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender_account: sys_acct
+  receiver_account: one
+  amount: 10000
+  remark: initial seed
+
+two:
+  sender_account: sys_acct
+  receiver_account: two
+  amount: 1234
+  remark: initial seed
